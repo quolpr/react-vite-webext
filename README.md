@@ -1,6 +1,8 @@
 # WebExtension Vite Starter
 
-A [Vite](https://vitejs.dev/) powered WebExtension ([Chrome](https://developer.chrome.com/docs/extensions/reference/), [FireFox](https://addons.mozilla.org/en-US/developers/), etc.) starter template. Made based on https://github.com/antfu/vitesse-webext
+A [Vite](https://vitejs.dev/) powered WebExtension ([Chrome](https://developer.chrome.com/docs/extensions/reference/), [FireFox](https://addons.mozilla.org/en-US/developers/), etc.) starter template.
+
+Made based on https://github.com/antfu/vitesse-webext, big thanks to @antfu!
 
 ## Features
 
@@ -19,7 +21,7 @@ A [Vite](https://vitejs.dev/) powered WebExtension ([Chrome](https://developer.c
 
 ### Coding Style
 
-- [ESLint](https://eslint.org/) with [@antfu/eslint-config](https://github.com/antfu/eslint-config), single quotes, no semi
+- [ESLint](https://eslint.org/)
 
 ### Dev tools
 
@@ -32,14 +34,14 @@ A [Vite](https://vitejs.dev/) powered WebExtension ([Chrome](https://developer.c
 
 ### GitHub Template
 
-[Create a repo from this template on GitHub](https://github.com/antfu/vitesse-webext/generate).
+[Create a repo from this template on GitHub](https://github.com/quolpr/react-vite-webext/generate).
 
 ### Clone to local
 
 If you prefer to do it manually with the cleaner git history
 
 ```bash
-npx degit antfu/vitesse-webext my-webext
+npx degit quolpr/react-vite-webext my-webext
 cd my-webext
 yarn
 ```
