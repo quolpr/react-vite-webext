@@ -1,9 +1,7 @@
-import { defineConfig } from 'vite'
-import WindiCSS from 'vite-plugin-windicss'
-import { sharedConfig } from './vite.config'
-import { r, isDev } from './scripts/utils'
-import windiConfig from './windi.config'
-import packageJson from './package.json'
+import { defineConfig } from "vite";
+import { sharedConfig } from "./vite.config";
+import { r, isDev } from "./scripts/utils";
+import packageJson from "./package.json";
 
 // bundling the content script using Vite
 export default defineConfig({
@@ -11,38 +9,24 @@ export default defineConfig({
   build: {
     watch: isDev
       ? {
-        include: [
-          r('src/contentScripts/**/*'),
-          r('src/components/**/*'),
-        ],
-      }
+          include: [r("src/contentScripts/**/*"), r("src/components/**/*")],
+        }
       : undefined,
-    outDir: r('extension/dist/contentScripts'),
+    outDir: r("extension/dist/contentScripts"),
     cssCodeSplit: false,
     emptyOutDir: false,
-    sourcemap: isDev ? 'inline' : false,
+    sourcemap: isDev ? "inline" : false,
     lib: {
-      entry: r('src/contentScripts/index.ts'),
+      entry: r("src/contentScripts/index.tsx"),
       name: packageJson.name,
-      formats: ['iife'],
+      formats: ["iife"],
     },
     rollupOptions: {
       output: {
-        entryFileNames: 'index.global.js',
+        entryFileNames: "index.global.js",
         extend: true,
       },
     },
   },
-  plugins: [
-    ...sharedConfig.plugins!,
-
-    // https://github.com/antfu/vite-plugin-windicss
-    WindiCSS({
-      config: {
-        ...windiConfig,
-        // disable preflight to avoid css population
-        preflight: false,
-      },
-    }),
-  ],
-})
+  plugins: [...sharedConfig.plugins!],
+});
